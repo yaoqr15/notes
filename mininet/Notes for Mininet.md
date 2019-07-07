@@ -28,7 +28,7 @@ $ sudo sh ./mininet/util/install.sh -a -s /usr/local/etc/mininet
 
 随后通过自带测试来验证mininet的成功安装。当未指定拓扑结构和网络参数时，Mininet默认使用一个包含2个主机和1个交换机的网络。```--test```参数指定节点初始化完成后自动进行的测试，```pingall```即测试各节点两两之间的连通性。
 
-![pingall_test](file://C:\Users\Core\Code\pingall_test.jpg)
+![pingall_test](./pingall_test.jpg)
 
 ### 2.搭建集群
 
