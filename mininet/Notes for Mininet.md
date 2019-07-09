@@ -6,6 +6,7 @@
 2. 模拟网络状态
 3. 节点间传输指定数据量
 4. 做SDN，监测当前网络状态
+5. 实战例子
 
 ## 学习过程记录
 
@@ -34,7 +35,52 @@ $ sudo sh ./mininet/util/install.sh -a -s /usr/local/etc/mininet
 
 ### 2.搭建集群
 
-Mininet支持使用Python脚本自定义网络拓扑结构。核心在于编写一个继承```Topo```的类，在该类的初始化方法中声明网络中包含的主机、交换机以及它们之间的连接线。以下是一个关于自定义拓扑结构的例子：
+在Mininet中可使用其中提供的拓扑原型快速搭建出指定拓扑结构。
+
+- 命令行参数
+
+  通过mininet的命令行参数```-topo```来选择经典拓扑结构原型，其中选项包括linear|minimal|reversed|single|torus|tree
+
+  ```bash
+  $ sudo mn --topo tree,depth=2,fanout=5 
+  ```
+
+  ![classic_topo_1](D:\Code\notes\mininet\classic_topo_1.jpg)
+
+  
+
+- Python API
+
+  原理同上，选择对应的类新建对象即可。
+
+  ```python
+  from mininet.topolib import TreeTopo
+  from mininet.net import Mininet
+  from mininet.log import setLogLevel
+  
+  def demo():
+      "Simple Demo of Tree Topo"
+  
+      topo = TreeTopo(depth=2, fanout=3)
+      net = Mininet(topo)
+      net.start()
+      net.pingAll()
+      net.stop()
+  
+  if __name__ == '__main__':
+      setLogLevel( 'info' )
+      demo()
+  ```
+
+  运行结果如下：
+
+  ![classic_topo_2](D:\Code\notes\mininet\classic_topo_2.jpg)
+
+  
+
+---
+
+Mininet还支持使用Python脚本自定义网络拓扑结构。核心在于编写一个继承```Topo```的类，在该类的初始化方法中声明网络中包含的主机、交换机以及它们之间的连接线。以下是一个关于自定义拓扑结构的例子：
 
 ```python
 from mininet.topo import Topo
