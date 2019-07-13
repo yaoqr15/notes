@@ -21,7 +21,7 @@ class InstanceTopo(Topo):
             'd': 600
         }
         for x in bandwidth:
-            host.append(self.addHost("host" + x))
+            host.append(self.addHost("host_" + x))
             self.addLink(switch, host[-1], bd=bandwidth[x])
 
 topos = {
