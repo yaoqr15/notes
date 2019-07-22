@@ -45,7 +45,7 @@ $ sudo sh ./mininet/util/install.sh -a -s /usr/local/etc/mininet
   $ sudo mn --topo tree,depth=2,fanout=5 
   ```
 
-  ![classic_topo_1](D:\Code\notes\mininet\classic_topo_1.jpg)
+  ![classic_topo_1](./classic_topo_1.jpg)
 
   
 
@@ -74,7 +74,7 @@ $ sudo sh ./mininet/util/install.sh -a -s /usr/local/etc/mininet
 
   运行结果如下：
 
-  ![classic_topo_2](D:\Code\notes\mininet\classic_topo_2.jpg)
+  ![classic_topo_2](./classic_topo_2.jpg)
 
   
 
