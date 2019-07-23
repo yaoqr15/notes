@@ -19,7 +19,7 @@ for switch in nodes:
 
 
 # get the current meric value of mininet bytes
-# 'TOPOLOGY' is the agent' s name, 'sort:mn_bytes:-' means results will be sorted in reverse order
+# 'TOPOLOGY' is the agent's name, 'sort:mn_bytes:-' means results will be sorted in reverse order
 r = requests.get("http://192.168.248.129:8008/table/TOPOLOGY/sort:mn_bytes:-/json")
 portsData = json.loads(r.text)
 
